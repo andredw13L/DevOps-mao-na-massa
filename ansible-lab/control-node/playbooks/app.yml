@@ -72,7 +72,7 @@
       register: app_version
     - name: Configurar servico do Systemd
       template:
-        src: etc/systemd/system/notes.service
+        src: ./etc/systemd/system/notes.service
         dest: /etc/systemd/system/notes.service
       notify: reload daemon
     - name: Iniciar o servico notes
