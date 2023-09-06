@@ -13,7 +13,6 @@ sudo yum upgrade
 sudo yum install jenkins -y
 
 systemctl daemon-reload
-service jenkins start
 
 # Instalação do docker e do docker compose
 sudo yum install -y yum-utils
@@ -33,7 +32,8 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 systemctl daemon-reload
 systemctl restart docker
 
-sudo systemctl enable jenkins
-sudo systemctl start jenkins
+
 
 usermod -aG docker jenkins
+
+sudo service jenkins start
