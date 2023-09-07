@@ -1,6 +1,6 @@
 #/bin/bash
 
-yum install -y epel-release wget java-11-openjdk-devel git
+yum install -y epel-release wget java-11-openjdk-devel git telnet
 
 #sudo wget --no-check-certificate -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/
 #sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
@@ -35,5 +35,7 @@ systemctl restart docker
 
 
 usermod -aG docker jenkins
+
+sudo systemctl enable jenkins
 
 sudo service jenkins start

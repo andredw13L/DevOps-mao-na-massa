@@ -2,7 +2,7 @@
 
 useradd sonar
 
-sudo yum install -y wget nano java-11-openjdk-devel unzip
+sudo yum install -y wget nano java-11-openjdk-devel unzip telnet
 
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.1.0.47736.zip
 
@@ -32,6 +32,8 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 EOT
+
+sudo systemctl enable sonar
 
 sudo service sonar start
 
