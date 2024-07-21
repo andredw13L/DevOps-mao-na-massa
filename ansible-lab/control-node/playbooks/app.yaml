@@ -68,7 +68,7 @@
 
     - name: Registrar versão atual do pacote
       shell:
-        cmd: mvn -o -q Dexec.executable=echo -Dexec.args='${project.version}'
+        cmd: mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -v '\['
         chdir: /opt/notes/
       register: app_version
 
