@@ -76,7 +76,7 @@
       template: 
         src: ./etc/systemd/system/notes.service
         dest: /etc/systemd/system/notes.service
-        notify: reload daemon
+      notify: reload daemon
 
     - name: Iniciar o serviço notes
       service:
