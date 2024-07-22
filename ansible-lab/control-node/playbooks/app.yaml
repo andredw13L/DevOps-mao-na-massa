@@ -49,6 +49,10 @@
       apt: 
         name: git
         state: latest
+
+    - name: Adicionar pasta ao safe directory
+      shell:
+        cmd: git config --global --add safe.directory /opt/notes
     
     - name: Clone do repositório Notes - app
       git: 
@@ -74,7 +78,7 @@
 
     - name: Configurar o serviço do Systemd
       template: 
-        src: ./etc/systemd/system/notes.service
+        src: etc/systemd/system/notes.service
         dest: /etc/systemd/system/notes.service
       notify: reload daemon
 
