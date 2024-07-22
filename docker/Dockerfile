@@ -16,4 +16,5 @@ RUN git clone https://github.com/andredw13L/spring-boot-mysql-rest-api-tutorial.
 RUN mvn package -Dmaven.test.skip=true
 ARG JAR_FILE=*.jar
 RUN cp ./target/easy-notes-1.0.0.jar /opt/notes/easy-notes.jar
+COPY application.properties application.properties
 ENTRYPOINT [ "java", "-jar", "/opt/notes/easy-notes.jar" ]
