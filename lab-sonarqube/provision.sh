@@ -32,3 +32,27 @@ WantedBy=multi-user.target
 EOT
 
 service sonar start
+
+
+# Instalação do sonar scanner
+wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.1.0.4477-linux-x64.zip
+
+unzip sonar-scanner-cli-6.1.0.4477-linux-x64.zip -d /opt/
+
+mv /opt/sonar-scanner-6.1.0.4477-linux-x64 /opt/sonar-scanner
+
+chown -R sonar:sonar /opt/sonar-scanner
+
+echo 'export PATH=$PATH:/opt/sonar-scanner/bin' | sudo tee -a /etc/profile
+
+# Instalação do Node.js
+
+sudo apt-get install -y curl
+
+curl -fsSL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
+
+sudo -E bash nodesource_setup.sh
+
+sudo apt-get install -y nodejs
+
+node -v
