@@ -1,11 +1,17 @@
 FROM node:alpine
 
+RUN addgroup -S app && adduser -S app -G app
+
 WORKDIR /usr/app
 
-COPY ./package.json ./
+RUN chown -R app:app /usr/app 
 
-RUN npm install
+USER app:app
 
-COPY ./ ./
+COPY ./package.json ./package.json
+
+RUN npm install --ignore-scripts
+
+COPY ./index.js ./index.js
 
 CMD [ "npm", "start" ]
