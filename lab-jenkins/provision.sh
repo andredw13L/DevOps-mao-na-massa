@@ -38,3 +38,5 @@ sudo usermod -aG docker $USER
 newgrp docker
 
 sudo systemctl daemon-reload
+
+sudo usermod -aG docker jenkins
