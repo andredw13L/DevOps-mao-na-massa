@@ -40,3 +40,5 @@ newgrp docker
 sudo systemctl daemon-reload
 
 sudo usermod -aG docker jenkins
+
+sudo systemctl restart jenknis
