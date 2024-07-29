@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "ubuntu/bionic64"
+  config.vm.box = "ubuntu/jammy64"
   config.vm.hostname = "sonarqube"
   config.vm.boot_timeout = 100000
   config.vm.network "forwarded_port", guest: 9000, host: 9000, hostip: '127.0.0.1'

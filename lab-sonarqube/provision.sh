@@ -31,7 +31,8 @@ Restart=always
 WantedBy=multi-user.target
 EOT
 
-service sonar start
+sudo service enable sonar
+sudo service start sonar
 
 
 # Instalação do sonar scanner
@@ -49,13 +50,7 @@ echo 'export PATH=$PATH:/opt/sonar-scanner/bin' | sudo tee -a /etc/profile
 
 sudo apt-get install -y curl
 
-curl -fsSL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
-
-# Execute o comando do-release-upgrade para atualizar o ubuntu
-# e instale essa ou uma versão mais recente do node
-# para evitar erro com o sonar-scanner
-
-# curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
+curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
 
 sudo -E bash nodesource_setup.sh
 
